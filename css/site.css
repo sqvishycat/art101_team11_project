@@ -9,6 +9,18 @@ body {
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  text-align: left;
+}
+
+.yes strong,
+.no strong {
+  font-size: 8rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.yes, .no {
+  font-size: 2rem;
 }
 
 .yes {
