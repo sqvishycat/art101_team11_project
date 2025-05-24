@@ -7,9 +7,10 @@ body {
 #result {
   margin-bottom: 2rem;
   padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  text-align: left;
+  border: 5px inset #0A2239;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #007EA7
 }
 
 .yes strong,
