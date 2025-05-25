@@ -47,3 +47,24 @@ th, td {
 th {
   background: #f4f4f4;
 }
+
+
+#date-check-btn {
+  background-color: #022749;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 999px; /* Fully rounded pill shape */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#date-check-btn:hover {
+  background-color: #005fa3;
+  transform: scale(1.03);
+}
+
+#date-check-btn:active {
+  transform: scale(0.97);
+}
