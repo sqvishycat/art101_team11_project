@@ -1,4 +1,5 @@
 // js/site.js
+//Code base and prototype designed by ChatGPT
 
 // Toggle date-picker on/off for debugging
 const ENABLE_DATE_PICKER = true;
