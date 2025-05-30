@@ -1,70 +1,140 @@
 body {
-  font-family: sans-serif;
-  max-width: 800px;
-  margin: 2rem auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0A2239;
+  color: #FFFFFF;
+  margin-top: 0;             
+  padding: 1rem 0;       
+  box-sizing: border-box;
 }
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+}
+
+html, body {
+  margin: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;           
+  background-color: #007EA7;
+  color: #FFFFFF;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.header-container {
+  max-width: 900px;  
+  margin: 0 auto;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.main-container {
+  max-width: 900px;      /* constrain main content */
+  margin: 0 auto;        /* center main content */
+  padding: 2rem 1rem;
+}
+
+
 
 #result {
   margin-bottom: 2rem;
-  padding: 1rem;
-  border: 5px inset #0A2239;
-  border-radius: 5px;
+  padding: 2rem;
+  border-radius: 12px;
   text-align: center;
-  background-color: #007EA7
+  background-color: #a8e9ff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 }
 
 .yes strong,
 .no strong {
-  font-size: 8rem;
+  font-size: 5rem;
   display: block;
-  margin-bottom: 0.5rem;
-}
-
-.yes, .no {
-  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .yes {
-  color: green;
+  color: #0b8100;
 }
 
 .no {
-  color: red;
+  color: #9E0031;
+}
+
+.yes, .no {
+  font-size: 1.5rem;
+}
+
+#date-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+input[type="date"],
+input[type="time"] {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+#date-check-btn {
+  background-color: #9E0031;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#date-check-btn:hover {
+  background-color: #cc0055;
+  transform: scale(1.05);
+}
+
+#date-check-btn:active {
+  transform: scale(0.95);
+}
+
+h2 {
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 3rem;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
+  background-color: #FFFFFF;
+  color: #0A2239;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 th, td {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ccc;
   text-align: center;
 }
 
 th {
-  background: #f4f4f4;
-}
-
-
-#date-check-btn {
-  background-color: #022749;
+  background-color: #007EA7;
   color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  border-radius: 999px; /* Fully rounded pill shape */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
 }
 
-#date-check-btn:hover {
-  background-color: #005fa3;
-  transform: scale(1.03);
-}
-
-#date-check-btn:active {
-  transform: scale(0.97);
+tr:last-child td {
+  border-bottom: none;
 }
