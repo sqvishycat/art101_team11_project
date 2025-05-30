@@ -38,11 +38,10 @@ header {
 }
 
 .main-container {
-  max-width: 900px;      /* constrain main content */
-  margin: 0 auto;        /* center main content */
+  max-width: 900px;
+  margin: 0 auto;
   padding: 2rem 1rem;
 }
-
 
 
 #result {
