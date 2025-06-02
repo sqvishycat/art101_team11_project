@@ -31,6 +31,7 @@ header {
 .header-container {
   max-width: 900px;  
   margin: 0 auto;
+  margin-top: -1rem;
   padding: 1rem 0;
   text-align: center;
   font-size: 2rem;
@@ -46,6 +47,7 @@ header {
 
 #result {
   margin-bottom: 2rem;
+  margin-top: 1rem;
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
@@ -55,7 +57,7 @@ header {
 
 .yes strong,
 .no strong {
-  font-size: 5rem;
+  font-size: 6rem;
   display: block;
   margin-bottom: 1rem;
 }
@@ -69,12 +71,15 @@ header {
 }
 
 .yes, .no {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 #date-container {
-  text-align: center;
+  width: fit-content;
+  margin-left: 0rem; 
   margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
 }
 
 input[type="date"],
@@ -87,7 +92,7 @@ input[type="time"] {
 }
 
 #date-check-btn {
-  background-color: #9E0031;
+  background-color: #007EA7; 
   color: white;
   border: none;
   padding: 0.6rem 1.5rem;
@@ -98,7 +103,7 @@ input[type="time"] {
 }
 
 #date-check-btn:hover {
-  background-color: #cc0055;
+  background-color: #005f80;
   transform: scale(1.05);
 }
 
@@ -108,7 +113,7 @@ input[type="time"] {
 
 h2 {
   color: #FFFFFF;
-  text-align: center;
+  text-align: left;
   margin-top: 3rem;
 }
 
