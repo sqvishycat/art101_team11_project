@@ -21,7 +21,8 @@ html, body {
 }
 
 header {
-  width: 100%;           
+  width: 100%;        
+  padding: 4px;
   background-color: #007EA7;
   color: #FFFFFF;
   overflow: hidden;
