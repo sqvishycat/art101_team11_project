@@ -21,17 +21,17 @@ function formatYYYYMMDD(d) {
 // Fetch high/low (hilo) predictions for a given date (YYYYMMDD) or today
 async function fetchHilo(dateStr) {
   const date = dateStr || formatYYYYMMDD(new Date());
-  const url  = `${API_BASE}`
-    + `?product=predictions`
-    + `&application=tidepool_app`
-    + `&begin_date=${date}`
-    + `&end_date=${date}`
-    + `&datum=MLLW`
-    + `&station=${STATION_ID}`
-    + `&time_zone=lst_ldt`
-    + `&units=english`
-    + `&interval=hilo`
-    + `&format=json`;
+  const url  = `${API_BASE}` +
+               `?product=predictions` +
+               `&application=tidepool_app` +
+               `&begin_date=${date}` +
+               `&end_date=${date}` +
+               `&datum=MLLW` +
+               `&station=${STATION_ID}` +
+               `&time_zone=lst_ldt` +
+               `&units=english` +
+               `&interval=hilo` +
+               `&format=json`;
 
   const resp = await fetch(url);
   if (!resp.ok) throw new Error(`API error ${resp.status}`);
@@ -137,15 +137,20 @@ async function checkTide(useCustomDate = false) {
 
 // Setup on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-  // If enabled, set default date & time picker to current
   if (ENABLE_DATE_PICKER) {
-    const now      = new Date();
-    const isoDate  = now.toISOString().split('T')[0];
-    const hh       = String(now.getHours()).padStart(2, '0');
-    const mm       = String(now.getMinutes()).padStart(2, '0');
-    const dp       = document.getElementById('tide-date-picker');
-    const tp       = document.getElementById('tide-time-picker');
-    if (dp) dp.value = isoDate;
+    const now = new Date();
+
+    // Build local YYYY-MM-DD (not UTC)
+    const localDate =
+      `${now.getFullYear()}-` +
+      `${String(now.getMonth() + 1).padStart(2, '0')}-` +
+      `${String(now.getDate()).padStart(2, '0')}`;
+
+    const hh = String(now.getHours()).padStart(2, '0');
+    const mm = String(now.getMinutes()).padStart(2, '0');
+    const dp = document.getElementById('tide-date-picker');
+    const tp = document.getElementById('tide-time-picker');
+    if (dp) dp.value = localDate;
     if (tp) tp.value = `${hh}:${mm}`;
   }
 
@@ -153,9 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!ENABLE_DATE_PICKER) {
     dateContainer.style.display = 'none';
   } else {
-    // Listen for date/time check
     document.getElementById('date-check-btn')
-      .addEventListener('click', () => checkTide(true));
+            .addEventListener('click', () => checkTide(true));
   }
 
   // Initial load for today at current time
