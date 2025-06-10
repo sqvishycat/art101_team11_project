@@ -1,5 +1,5 @@
 // js/site.js
-//Code base and prototype designed by ChatGPT
+// Code base and prototype designed by ChatGPT
 
 // Toggle date-picker on/off for debugging
 const ENABLE_DATE_PICKER = true;
@@ -81,12 +81,16 @@ function renderTable(hilos) {
 
 // Fetch & render on pageload or date selection
 async function checkTide(useCustomDate = false) {
-  const resultDiv = document.getElementById('result');
+  const resultDiv  = document.getElementById('result');
+  const headerEl   = document.getElementById('tide-header');
   resultDiv.textContent = 'Fetching tide data…';
 
+  // We'll set this to display in the header if custom date is used
+  let displayDate = null;
+
   // Determine date string for fetchHilo and reference time
-  let dateStr    = null;
-  let refTimeMs  = Date.now();
+  let dateStr   = null;
+  let refTimeMs = Date.now();
 
   if (useCustomDate) {
     const datePicker = document.getElementById('tide-date-picker').value; // 'YYYY-MM-DD'
@@ -97,8 +101,18 @@ async function checkTide(useCustomDate = false) {
       const [year, month, day] = datePicker.split('-').map(Number);
       const [hour = 9, minute = 0] = timePicker.split(':').map(Number);
       const customDate = new Date(year, month - 1, day, hour, minute);
-      refTimeMs = customDate.getTime();
+      refTimeMs     = customDate.getTime();
+      displayDate   = customDate.toLocaleDateString('en-US', {
+        month: 'long', day: 'numeric', year: 'numeric'
+      });
     }
+  }
+
+  // Update the table header text
+  if (displayDate) {
+    headerEl.textContent = `${displayDate} High/Low Tides`;
+  } else {
+    headerEl.textContent = `Today's High/Low Tides`;
   }
 
   try {
@@ -143,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('date-check-btn')
       .addEventListener('click', () => checkTide(true));
   }
+
   // Initial load for today at current time
   checkTide(false);
 });
