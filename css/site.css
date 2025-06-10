@@ -1,11 +1,17 @@
-/* General body and layout styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0A2239;
   color: #FFFFFF;
-  margin-top: 0;
-  padding: 1rem 0;
+  margin-top: 0;             
+  padding: 1rem 0;       
   box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
 }
 
 html, body {
@@ -14,18 +20,96 @@ html, body {
   padding: 0;
 }
 
-/* Heading and text styles with new font stack */
-h1 {
-  font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, 
-    "URW Palladio L", "Nimbus Roman No9 L", serif;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 15.4px;
+header {
+  width: 100%;        
+  padding: 4px;
+  background-color: #007EA7;
   color: #FFFFFF;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.header-container {
+  max-width: 900px;  
+  margin: 0 auto;
+  margin-top: -1rem;
+  padding: 1rem 0;
   text-align: center;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.main-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+
+#result {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #a8e9ff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+
+.yes strong,
+.no strong {
+  font-size: 6rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.yes {
+  color: #0b8100;
+}
+
+.no {
+  color: #9E0031;
+}
+
+.yes, .no {
+  font-size: 1.75rem;
+}
+
+#date-container {
+  width: fit-content;
+  margin-left: 0rem; 
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+input[type="date"],
+input[type="time"] {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+#date-check-btn {
+  background-color: #007EA7; 
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#date-check-btn:hover {
+  background-color: #005f80;
+  transform: scale(1.05);
+}
+
+#date-check-btn:active {
+  transform: scale(0.95);
 }
 
 h2 {
@@ -34,26 +118,28 @@ h2 {
   margin-top: 3rem;
 }
 
-h3 {
-  font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, 
-    "URW Palladio L", "Nimbus Roman No9 L", serif;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 700;
-  line-height: 15.4px;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #FFFFFF;
+  color: #0A2239;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-p {
-  font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, 
-    "URW Palladio L", "Nimbus Roman No9 L", serif;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 20px;
+th, td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
 }
 
-blockquote {
-  font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, 
-    "URW Palladio L", "Nimbus Roman No9 L", serif
+th {
+  background-color: #007EA7;
+  color: white;
+  font-weight: bold;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
