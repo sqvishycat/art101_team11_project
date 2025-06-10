@@ -143,3 +143,32 @@ th {
 tr:last-child td {
   border-bottom: none;
 }
+
+
+header {
+  text-align: center;
+  padding: 0.5rem 0;      
+  background: #007BA7;    
+}
+
+
+.header-container {
+  display: inline-flex;
+  align-items: center;    
+  gap: 0.5rem;            
+}
+
+
+.header-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+
+.header-title {
+  margin: 0;
+  font-size: 1.5rem;     
+  line-height: 1;
+}
